@@ -3,7 +3,9 @@ const User = require("./db/User.js");
 const Product = require("./db/product.js");
 const express = require("express");
 const app = express();
+require('dotenv').config();
 const cors = require("cors");
+const port = process.env.PORT || 5000
 
 app.use(express.json());
 app.use(cors());
@@ -56,4 +58,4 @@ app.get("http:/localhost:5000/getproduct/:id", async (req, res) => {
   res.send(data);
 });
 
-app.listen(5000);
+app.listen(port);
